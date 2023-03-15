@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="regform.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="column1">
+            <form id="form" class="form">
+                <h2>Register with us</h2>
+                <div class="form-control">
+                    <label for='username'>Username</label>
+                    <input type="text" id="username" placeholder="Enter username">
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for='email'>Email</label>
+                    <input type="email" id="email" placeholder="Enter email">
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for='password'>Password</label>
+                    <input type="password" id="password" placeholder="Enter password">
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for='password2'>Confirm Password</label>
+                    <input type="password" id="password2" placeholder="Enter password again ">
+                    <small>Error message</small>
+                </div>
+                <button id="signup">Sign Up</button>
+            </form>
+        </div>
+        <div class="column2">
+
+            <img src="https://i.ibb.co/k5NNz4F/pablo-sign-up.png" alt="pablo-sign-up" border="0" class='signup-image'>
+        </div>
+
+    </div>
+    <script src="./script.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+        import { getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyDWkxDW1zHZ9PT_lS9hob2AHNUnw0kxELk",
+            authDomain: "mpr1a-72b86.firebaseapp.com",
+            projectId: "mpr1a-72b86",
+            storageBucket: "mpr1a-72b86.appspot.com",
+            messagingSenderId: "702484756734",
+            appId: "1:702484756734:web:aba40752d59ccc972a8daf"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        document.getElementById("signup").addEventListener('click', function () {
+
+            const username = document.getElementById("username");
+const password = document.getElementById("password")
+const email = document.getElementById("email");
+const password2 = document.getElementById("password2");
+            
+            if(password.value===password2.value)
+            createUserWithEmailAndPassword(auth, email.value, password.value)
+                .then(async (userCredential) => {
+                    // Signed in 
+                    await setDoc(doc(db, "users", email.value), {
+                        username: username.value
+                    });
+                    const user = userCredential.user;
+                    // ...
+                    console.log("created");
+                
+                    window.location.href= "./index.html"
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // ..
+                    console.log(errorCode + errorMessage);
+                });
+        });
+    </script>
+    
+</body>
+
+</html>

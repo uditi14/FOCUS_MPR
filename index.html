@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main>
+    <div class="big-wrapper light">
+      <img src="./img/shape.png" alt="" class="shape" />
+
+      <header>  
+        <div class="container">
+          <div class="logo">
+            <img src="./img/mprlogo.png" alt="Logo" />
+            <h3>Focus+</h3>
+          </div>
+
+          <div class="links">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="./timer.html">Pomodoro</a></li>
+              <li><a href="./study.html">Study+</a></li>
+              <li><a href="./regform.html" class="btn">Sign up</a></li>
+            </ul>
+          </div>
+
+          <div class="overlay"></div>
+
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="showcase-area">
+        <div class="container">
+          <div class="left">
+            <div class="big-title">
+              <h1>Welcome to Focus+</h1>
+            </div>
+            <p class="text">
+              Your one stop destination for undivided focus as well as accumulated study material.
+            </p>
+          </div>
+
+          <div class="right">
+            <img src="./img/person.png" alt="Person Image" class="person" />
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-down arrows">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="card_container">
+        <span class="card">
+          <img src="./img/focus+.jpg" alt="focus+">
+          <div class="con-text">
+            <h2>Focus+</h2>
+            <p>
+              Get the experience of undivided focus by using our pomodoro timer!
+              <button onclick="goto('/timer.html')">
+                See More
+              </button>
+            </p>
+          </div>
+        </span>
+
+        <span class="card">
+          <img src="./img/study+.jpg" alt="study+">
+          <div class="con-text">
+            <h2>Study+</h2>
+            <p>
+              With the backing of experts quick start your coding journey with our study+ section.
+              <button onclick="goto('/study.html')">
+                See More
+              </button>
+            </p>
+          </div>
+        </span>
+      </div>
+
+      <div class="bottom-area">
+        <div class="container">
+          <button class="toggle-btn">
+            <i class="far fa-moon"></i>
+            <i class="far fa-sun"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>

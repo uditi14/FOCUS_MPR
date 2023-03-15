@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <div class="overlay"></div>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <!-- My JS -->
+    <script src="main.js"></script>
+
+    <!-- Links -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="timer.css" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/996973c893.js"></script>
+
+    <title>Focus+</title>
+     <!-- Main Header -->
+  <div class="big-wrapper light">
+    <header>  
+      <div class="container">
+        <div class="logo">
+          <img src="./img/mprlogo.png" alt="Logo" />
+          <h3>Focus+</h3>
+          <div class="links">
+            <ul>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./timer.html">Pomodoro</a></li>
+              <li><a href="./study.html">Study+</a></li>
+              <li><a href="./regform.html" class="btn1">Sign up</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="overlay"></div>
+      </div>
+    </header>
+        <!-- Heading -->
+        <h1 class="text-center my-2 heading">Pomodoro Timer</h1>
+        <!-- Main Timer -->
+        <div class="container timer">
+          <div class="row">
+            <div class="col-5">
+              <h2 id="minutes">25</h2>
+            </div>
+            <div class="col-2">
+              <h2>:</h2>
+          </div>
+          <div class="col-5">
+            <h2 id="seconds">00</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Start Button and reset button-->
+      <div class="conatiner d-flex justify-content-center my-5">
+        <button class="btn" onclick="start_timer()">
+          <i class="fas fa-play fa-2x"></i>
+        </button>
+        <button class="break"><a href = "./break.html">Short Break</a></button>
+        <a href="index.html"><i class="fas fa-redo-alt fa-2x"></i></a>
+      </div>
+    </div>
+    <main>
+        <i class="tasks icon"></i>
+      </form>
+		<form id="new-task-form">
+			<input style="background-color:#334173" 
+				type="text" 
+				name="new-task-input" 
+				id="new-task-input" 
+				placeholder="What do you have planned?" />
+        
+			<input 
+				type="submit"
+				id="new-task-submit" 
+				value="Add task" />
+		</form>
+		<section class="task-list">
+			<h2>Tasks</h2>
+			<div id="tasks">
+			</div>
+      </section>
+		</div>
+  </div>
+	</main>
+
+	<script src="main.js"></script>
+</body>
+   
+
+    <!-- Scripts -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"
+      integrity="sha512-lOrm9FgT1LKOJRUXF3tp6QaMorJftUjowOWiDcG5GFZ/q7ukof19V0HKx/GWzXCdt9zYju3/KhBNdCLzK8b90Q=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+      integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
